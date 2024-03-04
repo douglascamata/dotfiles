@@ -2,21 +2,21 @@
 [user]
   name = Douglas Camata
   email = 159076+douglascamata@users.noreply.github.com
-	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO5tOZJZHQKk/rqh3SCf7gAg+v5bsxCrpvIYCWgjdvF7
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO5tOZJZHQKk/rqh3SCf7gAg+v5bsxCrpvIYCWgjdvF7
 [color]
   branch = auto
   diff = auto
   status = auto
 [alias]
   ci = commit
-	st = status
-	br = branch
-	co = checkout
-	df = diff
-	lg = log -p
-	who = shortlog -s --
-	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-	cf = !sh -c \"git diff --name-only | uniq | xargs subl -n\"
+  st = status
+  br = branch
+  co = checkout
+  df = diff
+  lg = log -p
+  who = shortlog -s --
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  cf = !sh -c \"git diff --name-only | uniq | xargs subl -n\"
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
@@ -25,8 +25,8 @@
 [init]
   defaultBranch = main
 [core]
-	autocrlf = input
-	excludesFile = ~/.gitignore.global
+  autocrlf = input
+  excludesFile = ~/.gitignore.global
   pager = delta
 [interactive]
   diffFilder = delta --color-only
@@ -47,7 +47,7 @@
 [pager]
   branch = false
 [push]
-	autoSetupRemote = true
+  autoSetupRemote = true
   default = simple
 [log]
-	showSignature = false
+  showSignature = false
