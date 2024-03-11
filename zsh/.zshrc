@@ -20,8 +20,8 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
+
+
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
@@ -139,5 +139,13 @@ alias s="kitty +kitten ssh"
 # asdf setup
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
+# --------------
+# Set up thefuck
+# --------------
+eval $(thefuck --alias)
+
 # CodeWhisperer post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"
+
+# Configuring atuin
+eval "$(atuin init zsh)"
