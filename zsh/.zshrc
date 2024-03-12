@@ -79,7 +79,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git macos fzf asdf direnv z)
+plugins=(git macos fzf asdf direnv z tmux)
+
+# Autostart tmux (if it's not already running) when zsh is launched in a terminal.
+export ZSH_TMUX_AUTOSTART=true
 
 source $ZSH/oh-my-zsh.sh
 
