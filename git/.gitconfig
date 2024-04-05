@@ -49,5 +49,8 @@
 [push]
   autoSetupRemote = true
   default = simple
+[pull]
+  rebase = false
+  ff = only
 [log]
   showSignature = false
