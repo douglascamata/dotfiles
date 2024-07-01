@@ -79,7 +79,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git macos fzf asdf direnv tmux)
+plugins=(git macos fzf direnv tmux)
 
 # Autostart tmux (if it's not already running) when zsh is launched in a terminal.
 export ZSH_TMUX_AUTOSTART=true
@@ -104,6 +104,7 @@ export VISUAL='nvim'
 
 # Add shell history for IEx shell
 export ERL_AFLAGS="-kernel shell_history enabled"
+
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -143,8 +144,6 @@ PATH=$PATH:/Users/doolivei/.local/bin/
 # ------------
 alias s="kitty +kitten ssh"
 
-# asdf setup
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # --------------
 # Set up thefuck
@@ -154,6 +153,8 @@ eval $(thefuck --alias)
 # Configuring atuin
 eval "$(atuin init zsh)"
 
+# Configure mise
+eval "$(/opt/homebrew/bin/mise activate zsh)"
 
 # Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
