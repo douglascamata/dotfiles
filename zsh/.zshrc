@@ -103,6 +103,9 @@ fi
 export KUBE_EDITOR='nvim'
 export VISUAL='nvim'
 
+# Add shell history for IEx shell
+export ERL_AFLAGS="-kernel shell_history enabled"
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
