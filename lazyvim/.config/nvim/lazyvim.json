@@ -1,7 +1,7 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.test.core",
     "lazyvim.plugins.extras.coding.copilot",
+    "lazyvim.plugins.extras.editor.aerial",
     "lazyvim.plugins.extras.editor.navic",
     "lazyvim.plugins.extras.lang.cmake",
     "lazyvim.plugins.extras.lang.docker",
@@ -10,11 +10,11 @@
     "lazyvim.plugins.extras.lang.markdown",
     "lazyvim.plugins.extras.lang.yaml",
     "lazyvim.plugins.extras.lsp.none-ls",
-    "lazyvim.plugins.extras.util.dot",
-    "lazyvim.plugins.extras.editor.aerial"
+    "lazyvim.plugins.extras.test.core",
+    "lazyvim.plugins.extras.util.dot"
   ],
   "news": {
-    "NEWS.md": "3314"
+    "NEWS.md": "6077"
   },
-  "version": 3
+  "version": 6
 }
