@@ -19,6 +19,10 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+# Set up powerlevel10k to show the k8s context on the right side of the prompt
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(kubecontext)
+typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='kubectl|helm|kubectx|kubeflex|kubens'
+
 # Set list of themes to pick from when loading at random
 
 
@@ -79,10 +83,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git macos fzf direnv tmux)
+plugins=(git macos fzf direnv)
 
 # Autostart tmux (if it's not already running) when zsh is launched in a terminal.
-export ZSH_TMUX_AUTOSTART=true
+# export ZSH_TMUX_AUTOSTART=true
 
 source $ZSH/oh-my-zsh.sh
 
@@ -93,18 +97,28 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
-else
-  export EDITOR='nvim'
-fi
+export EDITOR='nvim'
 export KUBE_EDITOR='nvim'
 export VISUAL='nvim'
 
+# ------------
+# Path changes
+# ------------
+PATH=$PATH:$(go env GOPATH)/bin
+PATH=$PATH:${HOME}/.local/bin/
+
+# ------------
+# Setup config home folder
+# ------------
+export XDG_CONFIG_HOME="$HOME/.config"
+
+
+# ------------
+# Elixir
+# ------------
+#
 # Add shell history for IEx shell
 export ERL_AFLAGS="-kernel shell_history enabled"
-
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -131,30 +145,28 @@ alias vim="nvim"
 alias nerdctl="/Users/doolivei/.rd/bin/nerdctl"
 alias s="kitty +kitten ssh"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-
-# ------------
-# Path changes
-# ------------
-PATH=$PATH:$(go env GOPATH)/bin
-PATH=$PATH:/Users/doolivei/.local/bin/
-
-
-# ------------
-# Kitty config
-# ------------
-alias s="kitty +kitten ssh"
-
+alias lg="lazygit"
+alias ld="lazydocker"
 
 # --------------
-# Set up thefuck
+# Set up thefuck (to fix typos)
 # --------------
 eval $(thefuck --alias)
 
-# Configuring atuin
+# --------------
+# Set up atuin (remote shell history)
+# --------------
 eval "$(atuin init zsh)"
 
-# Configure mise
+# --------------
+# Set up mise (version manager for tools)
+# --------------
 eval "$(/opt/homebrew/bin/mise activate zsh)"
+
+# Helper function to list open ports and their processes
+open_ports() {
+  sudo lsof -iTCP -sTCP:LISTEN -n -P
+}
 
 # Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
