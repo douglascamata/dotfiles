@@ -54,3 +54,5 @@
   ff = only
 [log]
   showSignature = false
+[url "git@github.com:"]
+	insteadof = https://github.com/
