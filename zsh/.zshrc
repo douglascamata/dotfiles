@@ -159,6 +159,11 @@ eval $(thefuck --alias)
 eval "$(atuin init zsh)"
 
 # --------------
+# Set up zoxide (cd with fuzzy search)
+# --------------
+eval "$(zoxide init zsh)"
+
+# --------------
 # Set up mise (version manager for tools)
 # --------------
 eval "$(/opt/homebrew/bin/mise activate zsh)"
