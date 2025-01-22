@@ -47,3 +47,5 @@ require("lazy").setup({
 
 -- Load snipmate snippets
 --require("luasnip.loaders.from_snipmate").lazy_load()
+
+LazyVim.config.kind_filter["go"] = false
