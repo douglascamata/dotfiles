@@ -139,7 +139,9 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 # Aliases
 # ------------
 alias ls="eza --icons -lh"
-alias cat="bat --style=auto"
+alias cat="bat --style=auto -P"
+alias less="bat --paging=always"
+alias more="bat --paging=always"
 alias k="kubectl"
 alias vim="nvim"
 alias nerdctl="/Users/doolivei/.rd/bin/nerdctl"
