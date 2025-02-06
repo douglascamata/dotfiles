@@ -177,3 +177,12 @@ open_ports() {
 
 # Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/Users/douglas/.opam/opam-init/init.zsh' ]] || source '/Users/douglas/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration
