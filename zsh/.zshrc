@@ -106,6 +106,7 @@ export VISUAL='nvim'
 # ------------
 PATH=$PATH:$(go env GOPATH)/bin
 PATH=$PATH:${HOME}/.local/bin/
+PATH=$PATH:${HOME}/.cargo/bin
 
 # ------------
 # Setup config home folder
@@ -169,6 +170,11 @@ eval "$(zoxide init zsh)"
 # Set up mise (version manager for tools)
 # --------------
 eval "$(/opt/homebrew/bin/mise activate zsh)"
+
+# --------------
+# Set up 1Password ssh agent auth sock
+# --------------
+export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 
 # Helper function to list open ports and their processes
 open_ports() {
