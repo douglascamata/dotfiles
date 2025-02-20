@@ -2,3 +2,4 @@ font-family = Monaspace Neon
 font-feature = -calt
 shell-integration = zsh
 macos-option-as-alt = true
+window-save-state = always
