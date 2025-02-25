@@ -176,6 +176,11 @@ eval "$(/opt/homebrew/bin/mise activate zsh)"
 # --------------
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 
+# --------------
+# Ensure Teleport and 1Passowrd are friends
+# --------------
+export TELEPORT_ADD_KEYS_TO_AGENT=no
+
 # Helper function to list open ports and their processes
 open_ports() {
   sudo lsof -iTCP -sTCP:LISTEN -n -P
