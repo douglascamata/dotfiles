@@ -139,7 +139,7 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 # ------------
 # Aliases
 # ------------
-alias ls="eza --icons -lh"
+alias ls="eza --icons -l"
 alias cat="bat --style=auto -P"
 alias less="bat --paging=always"
 alias more="bat --paging=always"
@@ -179,6 +179,7 @@ export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agen
 # --------------
 # Ensure Teleport and 1Passowrd are friends
 # --------------
+#
 export TELEPORT_ADD_KEYS_TO_AGENT=no
 
 # Helper function to list open ports and their processes
