@@ -39,11 +39,14 @@
   program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 [commit]
   gpgsign = true
+  verbose = true
 [merge]
   conflictStyle = diff3
   ff = false 
 [diff]
   colorMoved = default
+  algorithm = histogram
+  mnemonicPrefix = true
 [pager]
   branch = false
 [push]
@@ -56,3 +59,12 @@
   showSignature = false
 [url "git@github.com:"]
 	insteadof = https://github.com/
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[rerere]
+	enabled = true
+	autoupdate = true
