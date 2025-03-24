@@ -1,0 +1,33 @@
+## which filter mode to use when atuin is invoked from a shell up-key binding
+## the accepted values are identical to those of "filter_mode"
+## leave unspecified to use same mode set in "filter_mode"
+filter_mode_shell_up_key_binding = "directory"
+
+## Defaults to true. If enabled, upon hitting enter Atuin will immediately execute the command. Press tab to return to the shell and edit.
+# This applies for new installs. Old installs will keep the old behaviour unless configured otherwise.
+enter_accept = true
+
+[stats]
+## Set commands where we should consider the subcommand for statistics. Eg, kubectl get vs just kubectl
+common_subcommands = [
+  "apt",
+  "cargo",
+  "docker",
+  "git",
+  "go",
+  "kubectl",
+  "k",
+  "yarn",
+  "npm",
+  "node",
+  "nodejs",
+  "brew",
+  "make",
+  "helm",
+]
+
+## Set commands that will be completely ignored from stats
+ignored_commands = ["cd", "ls", "vi", "vim", "neovim", "env"]
+
+[sync]
+records = true

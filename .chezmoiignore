@@ -1,0 +1,4 @@
+# Ignore the `external_files` folder, where I put files that are managed
+# externally to chezmoi (i.e. LazyVim's lazy-lock.json)
+external_files/
+external_files/**/*

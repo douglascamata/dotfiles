@@ -1,0 +1,6 @@
+font-family = Monaspace Neon
+font-feature = -calt
+shell-integration = zsh
+shell-integration-features = sudo
+macos-option-as-alt = true
+window-save-state = always
