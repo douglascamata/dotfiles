@@ -1,0 +1,83 @@
+#!/bin/bash
+
+# Script: bring_window
+# Description: Show a wofi menu of all windows in specified workspace
+# and move selected window to current workspace
+# Usage: bring_winow [workspace_name]
+
+# Get workspace name from parameter or default to special:minimized
+workspace_name="${1:-special:minimized}"
+
+# Check if jq is installed
+if ! command -v jq &>/dev/null; then
+	notify-send "Error" "jq is required but not installed"
+	exit 1
+fi
+
+# Get current workspace
+current_workspace=$(hyprctl activeworkspace -j | jq -r '.id')
+
+# Get all windows in specified workspace
+minimized_windows=$(hyprctl clients -j | jq -r --arg workspace "$workspace_name" '
+    .[] | 
+    select(.workspace.name == $workspace) | 
+    "\(.address)|\(.class)|\(.title)|\(.pid)"
+')
+
+# Check if there are any windows in the workspace
+if [[ -z "$minimized_windows" ]]; then
+	notify-send "Scratchpad" "No windows found in workspace: $workspace_name"
+	exit 0
+fi
+
+# Format windows for wofi display
+window_list=""
+declare -A window_addresses
+
+while IFS='|' read -r address class title pid; do
+	# Truncate long titles
+	if [[ ${#title} -gt 50 ]]; then
+		display_title="${title:0:47}..."
+	else
+		display_title="$title"
+	fi
+
+	# Format: [AppClass] Window Title
+	display_line="[$class] $display_title"
+	window_list+="$display_line\n"
+	window_addresses["$display_line"]="$address"
+done <<<"$minimized_windows"
+
+# Remove trailing newline
+window_list=${window_list%\\n}
+
+# Show wofi menu
+selected=$(echo -e "$window_list" | wofi \
+	--dmenu \
+	--prompt "Restore window:" \
+	--width 800 \
+	--height 400 \
+	--style="$HOME/.local/share/omarchy/default/wofi/search.css" \
+	--cache-file=/dev/null \
+	--allow-markup \
+	--insensitive)
+
+# If nothing selected, exit
+if [[ -z "$selected" ]]; then
+	exit 0
+fi
+
+# Get the window address for the selected window
+window_address="${window_addresses[$selected]}"
+
+if [[ -n "$window_address" ]]; then
+	# Move window to current workspace and focus it
+	hyprctl dispatch movetoworkspace "$current_workspace,address:$window_address"
+	hyprctl dispatch focuswindow "address:$window_address"
+
+	# Show notification
+	app_name=$(echo "$selected" | sed 's/\[.*\] //')
+	notify-send "Window Restored" "$app_name moved to workspace $current_workspace"
+else
+	notify-send "Error" "Could not find selected window"
+fi
