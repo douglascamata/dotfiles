@@ -26,7 +26,7 @@ minimized_windows=$(hyprctl clients -j | jq -r --arg workspace "$workspace_name"
 
 # Check if there are any windows in the workspace
 if [[ -z "$minimized_windows" ]]; then
-	notify-send "Scratchpad" "No windows found in workspace: $workspace_name"
+	notify-send "Move Window" "No windows found in workspace: $workspace_name"
 	exit 0
 fi
 
