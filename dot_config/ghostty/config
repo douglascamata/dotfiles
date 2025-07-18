@@ -4,3 +4,5 @@ shell-integration = zsh
 shell-integration-features = sudo
 macos-option-as-alt = true
 window-save-state = always
+confirm-close-surface = false
+keybind = shift+enter=text:\n
