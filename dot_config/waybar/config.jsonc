@@ -96,7 +96,7 @@
     "on-click": "GTK_THEME=Adwaita-dark blueberry"
   },
   "pulseaudio": {
-    "format": "{icon}",
+    "format": "{volume}% {icon}",
     "on-click": "GTK_THEME=Adwaita-dark pavucontrol",
     "on-click-right": "pamixer -t",
     "tooltip-format": "Playing at {volume}%",
