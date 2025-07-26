@@ -52,15 +52,9 @@ done <<<"$minimized_windows"
 window_list=${window_list%\\n}
 
 # Show wofi menu
-selected=$(echo -e "$window_list" | wofi \
+selected=$(echo -e "$window_list" | walker \
 	--dmenu \
-	--prompt "Restore window:" \
-	--width 800 \
-	--height 400 \
-	--style="$HOME/.local/share/omarchy/default/wofi/search.css" \
-	--cache-file=/dev/null \
-	--allow-markup \
-	--insensitive)
+	--placeholder "Restore window:")
 
 # If nothing selected, exit
 if [[ -z "$selected" ]]; then
