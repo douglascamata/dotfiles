@@ -10,7 +10,8 @@
     "hyprland/window"
   ],
   "modules-center": [
-    "clock"
+    "clock",
+    "custom/update"
   ],
   "modules-right": [
     "group/tray-expander",
@@ -57,6 +58,12 @@
     "separate-outputs": true,
     "icon": true
   },
+  "custom/update": {
+    "format": "",
+    "exec": "~/.local/share/omarchy/bin/omarchy-update-available",
+    "on-click": "ghostty --class Omarchy --title Omarchy -e omarchy-update",
+    "interval": 3600
+  },
   "cpu": {
     "interval": 5,
     "format": "󰍛",
@@ -65,10 +72,10 @@
   "clock": {
     "format": "{:%A, %d %B - %H:%M %p}",
     "format-alt": "{:%d %B W%V %Y}",
-    "tooltip": false
+    "tooltip": false,
+    "on-click-right": "~/.local/share/omarchy/bin/omarchy-cmd-tzupdate"
   },
   "network": {
-    "interface": "enp38s0",
     "format-icons": [
       "󰤯",
       "󰤟",
@@ -80,24 +87,63 @@
     "format-wifi": "{icon}",
     "format-ethernet": "󰀂",
     "format-disconnected": "󰖪",
-    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}\nLocal IP: {ipaddr}",
-    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}\nLocal IP: {ipaddr}",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "nospacing": 1,
-    "on-click": "GTK_THEME=Adwaita-dark nm-connection-editor",
-    "on-click-right": "ghostty --class=Impala -e impala"
+    "on-click": "ghostty --class=Impala -e impala"
+  },
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-discharging": "{icon}",
+    "format-charging": "{icon}",
+    "format-plugged": "",
+    "format-icons": {
+      "charging": [
+        "󰢜",
+        "󰂆",
+        "󰂇",
+        "󰂈",
+        "󰢝",
+        "󰂉",
+        "󰢞",
+        "󰂊",
+        "󰂋",
+        "󰂅"
+      ],
+      "default": [
+        "󰁺",
+        "󰁻",
+        "󰁼",
+        "󰁽",
+        "󰁾",
+        "󰁿",
+        "󰂀",
+        "󰂁",
+        "󰂂",
+        "󰁹"
+      ]
+    },
+    "format-full": "󰂅",
+    "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+    "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+    "interval": 5,
+    "states": {
+      "warning": 20,
+      "critical": 10
+    }
   },
   "bluetooth": {
     "format": "",
     "format-disabled": "󰂲",
     "format-connected": "",
     "tooltip-format": "Devices connected: {num_connections}",
-    "on-click": "GTK_THEME=Adwaita-dark blueberry"
+    "on-click": "blueberry"
   },
   "pulseaudio": {
     "format": "{volume}% {icon}",
-    "on-click": "alacritty --class=Wiremix -e wiremix",
+    "on-click": "ghostty --class=Wiremix -e wiremix",
     "on-click-right": "pamixer -t",
     "tooltip-format": "Playing at {volume}%",
     "scroll-step": 5,
@@ -113,7 +159,7 @@
   "group/tray-expander": {
     "orientation": "inherit",
     "drawer": {
-      "transition-duration": 500,
+      "transition-duration": 600,
       "children-class": "tray-group-item"
     },
     "modules": [
