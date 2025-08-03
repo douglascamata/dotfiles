@@ -118,6 +118,15 @@ PATH=$PATH:${HOME}/.cargo/bin
 PATH=$PATH:${HOME}/.local/share/omarchy/bin
 {{- end}}
 
+
+# -------
+# Omarchy
+# -------
+{{- if eq .chezmoi.os "linux" }}
+export OMARCHY_PATH="/home/$USER/.local/share/omarchy"
+{{- end}}
+
+
 # ------------
 # Setup config home folder
 # ------------
