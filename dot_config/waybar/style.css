@@ -50,6 +50,10 @@ tooltip {
   padding: 2px;
 }
 
+#submap {
+  margin: 0 7.5px;
+}
+
 window#waybar.fullscreen {
   opacity: 0.8;
 }
