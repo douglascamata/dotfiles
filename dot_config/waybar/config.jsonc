@@ -29,7 +29,7 @@
   "custom/update": {
     "format": "",
     "exec": "~/.local/share/omarchy/bin/omarchy-update-available",
-    "on-click": "alacritty --class Omarchy --title Omarchy -e omarchy-update",
+    "on-click": "ghostty --class Omarchy --title Omarchy -e omarchy-update",
     "interval": 3600
   },
   "hyprland/workspaces": {
