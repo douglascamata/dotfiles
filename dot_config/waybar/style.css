@@ -37,15 +37,19 @@
 #bluetooth,
 #pulseaudio,
 #clock,
-#custom-power-menu {
+#custom-omarchy {
   min-width: 12px;
   margin: 0 7.5px;
 }
 
 #custom-expand-icon {
-  margin-right: 0px;
+  margin-right: 12px;
 }
 
 tooltip {
   padding: 2px;
+}
+
+window#waybar.fullscreen {
+  opacity: 0.8;
 }
