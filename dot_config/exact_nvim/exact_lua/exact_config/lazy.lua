@@ -48,4 +48,6 @@ require("lazy").setup({
 -- Load snipmate snippets
 --require("luasnip.loaders.from_snipmate").lazy_load()
 
+-- Show all Go symbols provided by the LSP in Aerials and
+-- Snacks Pickers (outline, symbols).
 LazyVim.config.kind_filter["go"] = false
