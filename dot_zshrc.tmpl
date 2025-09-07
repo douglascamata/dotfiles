@@ -241,7 +241,7 @@ export PATH=$PATH:"$HOME/.claude/local"
 #
 # Helper function to list open ports and their processes
 open_ports() {
-  sudo lsof -iTCP -sTCP:LISTEN -n -P
+  lsof -iTCP -sTCP:LISTEN -n -P
 }
 
 compress() { tar -czf "${1%/}.tar.gz" "${1%/}"; }
