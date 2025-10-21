@@ -10,5 +10,6 @@
   "statusLine": {
     "type": "command",
     "command": "bunx ccusage@latest statusline"
-  }
+  },
+  "alwaysThinkingEnabled": true
 }
