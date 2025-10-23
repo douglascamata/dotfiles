@@ -1,5 +1,6 @@
-font-family = Monaspace Neon
-font-feature = -calt
+font-family = Berkeley Mono
+font-feature = +calt
+
 shell-integration = zsh
 shell-integration-features = sudo
 macos-option-as-alt = true
