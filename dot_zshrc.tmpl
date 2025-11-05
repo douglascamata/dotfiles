@@ -187,8 +187,9 @@ eval $(thefuck --alias)
 # --------------
 # Set up atuin (remote shell history)
 # --------------
+ATUIN_DIR="$HOME/.atuin/bin/env"
+[ -d "$ATUIN_DIR" ] && . "$ATUIN_DIR"
 if command -v atuin >/dev/null 2>&1; then
-  . "$HOME/.atuin/bin/env"
   eval "$(atuin init zsh)"
 fi
 
