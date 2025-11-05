@@ -5,5 +5,5 @@ git:
   overrideGpg: true
   commit:
     signOff: true
-  paging:
-    pager: "delta --dark --paging=never"
+  pagers:
+    - pager: "delta --dark --paging=never"
