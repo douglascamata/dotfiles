@@ -197,7 +197,9 @@ fi
 # --------------
 # Set up zoxide (cd with fuzzy search)
 # --------------
-eval "$(zoxide init zsh)"
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init zsh)"
+fi
 
 # --------------
 # Set up mise (version manager for tools)
