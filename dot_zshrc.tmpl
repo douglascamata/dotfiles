@@ -20,7 +20,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set up powerlevel10k to show the k8s context on the right side of the prompt
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(kubecontext)
@@ -265,3 +265,4 @@ if command -v opam >/dev/null 2>&1 && [[ -r "$HOME/.opam/opam-init/init.zsh" ]];
 fi
 # END opam configuration
 
+command -v starship >/dev/null 2>&1 && eval "$(starship init zsh)"
