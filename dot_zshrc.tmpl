@@ -208,10 +208,13 @@ fi
 # Set up mise (version manager for tools)
 # --------------
 {{- if eq .chezmoi.os "darwin" }}
-eval "$(/opt/homebrew/bin/mise activate zsh)"
+MISE_BIN="/opt/homebrew/bin/mise"
 {{- else if eq .chezmoi.os "linux" }}
-eval "$(/usr/bin/mise activate zsh)"
+MISE_BIN="/usr/bin/mise"
 {{- end }}
+if [ -n "$MISE_BIN" ] && [ -x "$MISE_BIN" ]; then
+eval "$($MISE_BIN activate zsh)"
+fi
 
 # --------------
 # Set up 1Password ssh agent auth sock
