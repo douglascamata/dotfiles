@@ -189,9 +189,9 @@ fi
 # --------------
 # Set up atuin (remote shell history)
 # --------------
-ATUIN_DIR="$HOME/.atuin/bin/env"
-if [ -f "$ATUIN_DIR" ]; then
-  . "$ATUIN_DIR"
+ATUIN_ENV="$HOME/.atuin/bin/env"
+if [ -f "$ATUIN_ENV" ]; then
+  . "$ATUIN_ENV"
 fi
 if command -v atuin >/dev/null 2>&1; then
   eval "$(atuin init zsh)"
