@@ -182,17 +182,20 @@ alias yayf="yay -Slq | fzf --multi --preview 'yay -Sii {1}' --preview-window=dow
 # --------------
 # Set up thefuck (to fix typos)
 # --------------
-eval $(thefuck --alias)
+if command -v thefuck >/dev/null 2>&1; then
+  eval $(thefuck --alias)
+fi
 
 # --------------
 # Set up atuin (remote shell history)
 # --------------
 ATUIN_DIR="$HOME/.atuin/bin/env"
-[ -d "$ATUIN_DIR" ] && . "$ATUIN_DIR"
+if [ -f "$ATUIN_DIR" ]; then
+  . "$ATUIN_DIR"
+fi
 if command -v atuin >/dev/null 2>&1; then
   eval "$(atuin init zsh)"
 fi
-
 
 # --------------
 # Set up zoxide (cd with fuzzy search)
