@@ -29,7 +29,7 @@
   excludesFile = ~/.gitignore.global
   pager = delta
 [interactive]
-  diffFilder = delta --color-only
+  diffFilter = delta --color-only
 [delta]
   navigate = true
   light = false
@@ -46,11 +46,12 @@
   verbose = true
 [merge]
   conflictStyle = zdiff3
-  ff = false 
+  ff = false
 [diff]
   colorMoved = default
   algorithm = histogram
   mnemonicPrefix = true
+  external = difft
 [pager]
   branch = false
 [push]
