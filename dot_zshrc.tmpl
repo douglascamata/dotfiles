@@ -114,6 +114,7 @@ export SUDO_EDITOR="$EDITOR"
 PATH=$PATH:$(go env GOPATH)/bin
 PATH=$PATH:${HOME}/.local/bin/
 PATH=$PATH:${HOME}/.cargo/bin
+PATH="${HOME}/.antigravity/antigravity/bin:$PATH"
 {{- if eq .chezmoi.os "linux" }}
 PATH=$PATH:${HOME}/.local/share/omarchy/bin
 {{- end}}
@@ -173,6 +174,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias lg="lazygit"
 alias ld="lazydocker"
 alias cm="chezmoi"
+alias yz="yazi"
 
 {{- if eq .chezmoi.os "linux" }}
 # Find packages without leaving the terminal
