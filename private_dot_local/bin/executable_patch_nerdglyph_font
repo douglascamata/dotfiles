@@ -1,0 +1,116 @@
+#!/usr/bin/env bash
+# Patch a font with Nerd Font glyphs using Docker
+
+set -euo pipefail
+
+# Configuration variables
+NERD_FONT_PATCHER_OPTS=(
+	"--complete"
+	"--single-width-glyphs"
+	"--adjust-line-height"
+	"-c"
+)
+
+DOCKER_IMAGE="nerdfonts/patcher"
+
+# Script usage and help
+usage() {
+	cat <<EOF
+Usage: $(basename "$0") [OPTIONS] FONT_PATH
+
+Patch a font with Nerd Font glyphs using Docker.
+
+OPTIONS:
+  -o, --output PATH       Output directory (default: ./patched)
+  --opts STRING           Nerd font patcher options (overrides defaults)
+  -h, --help             Show this help message
+
+EXAMPLES:
+  # Basic usage with default options
+  $(basename "$0") /path/to/font.ttf
+
+  # Specify output directory
+  $(basename "$0") -o ~/fonts /path/to/font.ttf
+
+  # Custom patcher options
+  $(basename "$0") --opts "--complete --careless" /path/to/font.ttf
+
+DEFAULT PATCHER OPTIONS:
+  ${NERD_FONT_PATCHER_OPTS[*]}
+
+EOF
+	exit 0
+}
+
+# Error handling
+error() {
+	echo "Error: $*" >&2
+	exit 1
+}
+
+# Parse arguments
+output_dir="./patched"
+font_path=""
+
+while [[ $# -gt 0 ]]; do
+	case "$1" in
+	-h | --help)
+		usage
+		;;
+	-o | --output)
+		shift
+		output_dir="$1"
+		;;
+	--opts)
+		shift
+		IFS=' ' read -ra NERD_FONT_PATCHER_OPTS <<<"$1"
+		;;
+	-*)
+		error "Unknown option: $1"
+		;;
+	*)
+		font_path="$1"
+		;;
+	esac
+	shift
+done
+
+# Validate input
+[[ -z "$font_path" ]] && error "Font path required"
+[[ -f "$font_path" ]] || error "Font file not found: $font_path"
+
+# Create output directory if it doesn't exist
+mkdir -p "$output_dir"
+
+# Get absolute paths
+font_path="$(cd "$(dirname "$font_path")" && pwd)/$(basename "$font_path")"
+output_dir="$(cd "$output_dir" && pwd)"
+
+# Verify Docker is available
+command -v docker &>/dev/null || error "Docker not found. Install Docker or make it available in PATH"
+
+# Get font filename
+font_name=$(basename "$font_path")
+echo "Patching font: $font_name"
+echo "Input: $font_path"
+echo "Output directory: $output_dir"
+echo "Patcher options: ${NERD_FONT_PATCHER_OPTS[*]}"
+
+# Copy font to temp dir to avoid spaces-in-path bug in container entrypoint
+# Use $HOME/tmp because Docker Desktop may not share /var/folders
+tmp_dir="$HOME/tmp/nerdpatch-$$"
+mkdir -p "$tmp_dir"
+trap 'rm -rf "$tmp_dir"' EXIT
+safe_name="${font_name// /_}"
+cp "$font_path" "$tmp_dir/$safe_name"
+
+# Run the patcher (don't pass font path - entrypoint finds fonts via 'find /in')
+set -x
+docker run --rm \
+	-v "$tmp_dir":/in:ro \
+	-v "$output_dir":/out \
+	"$DOCKER_IMAGE" \
+	"${NERD_FONT_PATCHER_OPTS[@]}"
+set +x
+
+echo "✓ Font patching complete"
