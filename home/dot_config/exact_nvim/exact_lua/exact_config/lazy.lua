@@ -51,3 +51,11 @@ require("lazy").setup({
 -- Show all Go symbols provided by the LSP in Aerials and
 -- Snacks Pickers (outline, symbols).
 LazyVim.config.kind_filter["go"] = false
+
+-- Set up custom truncation for Snacks Picker based
+-- on terminal width
+local original_truncpath = Snacks.picker.util.truncpath
+Snacks.picker.util.truncpath = function(path, len, opts)
+  -- Use the original truncpath function with the current window width
+  return original_truncpath(path, vim.o.columns, opts)
+end
