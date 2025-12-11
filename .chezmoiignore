@@ -5,6 +5,8 @@ external_files/**/*
 
 Brewfile
 README.md
+AGENTS.md
+.editorconfig
 
 {{- if ne .chezmoi.hostname "roci" }}
 # hyprland stuff
