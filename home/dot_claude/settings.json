@@ -3,13 +3,20 @@
     "allow": [
       "WebFetch",
       "WebSearch",
-      "mcp__context7"
+      "Bash(grep:*)"
     ],
-    "deny": []
+    "deny": [],
+    "defaultMode": "default"
   },
   "statusLine": {
     "type": "command",
-    "command": "bunx ccusage@latest statusline"
+    "command": "bunx -y ccstatusline@latest",
+    "padding": 0
+  },
+  "enabledPlugins": {
+    "plugin-dev@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true,
+    "pr-review-toolkit@claude-plugins-official": true
   },
   "alwaysThinkingEnabled": true
 }
