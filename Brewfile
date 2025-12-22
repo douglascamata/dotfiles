@@ -1,6 +1,7 @@
 tap "charmbracelet/tap"
 tap "oven-sh/bun"
 tap "sst/tap"
+tap "steipete/tap"
 
 # Basic packages
 brew "stow"
@@ -26,6 +27,7 @@ brew "crush"
 brew "gemini-cli"
 cask "codex"
 cask "copilot-cli"
+cask "codexbar"
 
 # Languages
 brew "go"
@@ -40,6 +42,7 @@ brew "zoxide"
 brew "ripgrep"
 brew "btop"
 brew "htop"
+brew "mactop"
 brew "eza"
 brew "fd"
 brew "fzf"
