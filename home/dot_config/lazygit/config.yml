@@ -6,4 +6,4 @@ git:
   commit:
     signOff: true
   pagers:
-    - pager: "delta --dark --paging=never"
+    - useExternalDiffGitConfig: true
