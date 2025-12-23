@@ -277,4 +277,11 @@ if command -v opam >/dev/null 2>&1 && [[ -r "$HOME/.opam/opam-init/init.zsh" ]];
 fi
 # END opam configuration
 
+# Reset terminal state before each prompt (fixes hangs after TUI apps)
+precmd_reset_tty() {
+  # Reset terminal to sane state - fixes issues after vim/lazygit
+  stty sane 2>/dev/null
+}
+precmd_functions=(precmd_reset_tty $precmd_functions)
+
 command -v starship >/dev/null 2>&1 && eval "$(starship init zsh)"
