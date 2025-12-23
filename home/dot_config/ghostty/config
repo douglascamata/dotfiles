@@ -1,9 +1,13 @@
 font-family = Berkeley Mono
 font-feature = +calt
 
+theme = Catppuccin Frappe
+
 shell-integration = zsh
 shell-integration-features = sudo
+
 macos-option-as-alt = true
 window-save-state = always
 confirm-close-surface = false
+
 keybind = shift+enter=text:\n
