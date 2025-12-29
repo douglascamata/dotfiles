@@ -1,0 +1,22 @@
+# Third Party Notices
+
+This directory contains code originally from:
+
+- **Source**: https://github.com/mitsuhiko/agent-stuff
+- **Author**: Armin Ronacher
+- **License**: Apache License 2.0
+
+See [LICENSE-Apache-2.0](LICENSE-Apache-2.0) for the full license text.
+
+## Covered Files
+
+The following files are derived from the above source:
+
+- `commands/handoff.md`
+- `commands/improve-plan.md`
+- `commands/pickup.md`
+- `skills/improve-skill/SKILL.md`
+- `skills/improve-skill/scripts/executable_extract-session.js`
+- `skills/tmux/SKILL.md`
+- `skills/tmux/scripts/executable_find-sessions.sh`
+- `skills/tmux/scripts/executable_wait-for-text.sh`
