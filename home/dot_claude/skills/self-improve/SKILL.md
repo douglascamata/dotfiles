@@ -1,14 +1,9 @@
-<!--
-SPDX-License-Identifier: Apache-2.0
-SPDX-FileCopyrightText: Armin Ronacher
-Originally from: https://github.com/mitsuhiko/agent-stuff
--->
 ---
-name: improve-skill
+name: self-improve
 description: "Analyze coding agent sessions to improve or create skills for Claude Code, Pi, and Codex."
 ---
 
-# Improve Skill
+# Self Improve
 
 This skill helps analyze coding agent sessions to improve or create skills. It works with Claude Code, Pi, and Codex session files.
 
@@ -42,6 +37,7 @@ The `extract-session.js` script finds and parses session files from any of the t
 ```
 
 **Session file locations:**
+
 - **Claude Code**: `~/.claude/projects/<encoded-cwd>/*.jsonl`
 - **Pi**: `~/.pi/agent/sessions/<encoded-cwd>/*.jsonl`
 - **Codex**: `~/.codex/sessions/YYYY/MM/DD/*.jsonl`
@@ -51,6 +47,7 @@ The `extract-session.js` script finds and parses session files from any of the t
 When asked to improve a skill based on a session:
 
 1. **Extract the session transcript:**
+
    ```bash
    ./scripts/extract-session.js > /tmp/session-transcript.txt
    ```
@@ -97,6 +94,7 @@ Write the improved skill back to the same location.
 When asked to create a new skill from a session:
 
 1. **Extract the session transcript:**
+
    ```bash
    ./scripts/extract-session.js > /tmp/session-transcript.txt
    ```

@@ -1,9 +1,4 @@
 #!/usr/bin/env node
-/**
- * SPDX-License-Identifier: Apache-2.0
- * SPDX-FileCopyrightText: Armin Ronacher
- * Originally from: https://github.com/mitsuhiko/agent-stuff
- */
 
 /**
  * Extract session transcript from Claude Code, Pi, or Codex session files.
