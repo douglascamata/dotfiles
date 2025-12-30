@@ -2,6 +2,11 @@
 name: self-improve
 description: "Analyze coding agent sessions to improve or create skills for Claude Code, Pi, and Codex."
 ---
+<!--
+SPDX-License-Identifier: Apache-2.0
+SPDX-FileCopyrightText: Armin Ronacher
+Originally from: https://github.com/mitsuhiko/agent-stuff
+-->
 
 # Self Improve
 
