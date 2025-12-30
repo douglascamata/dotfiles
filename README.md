@@ -97,3 +97,9 @@ chezmoi update
 Files ending in `.tmpl` are templates that chezmoi processes. This allows for
 OS-specific or machine-specific configurations. For example, `dot_zshrc.tmpl`
 has conditional blocks for Linux vs macOS.
+
+## License
+
+This repository is licensed under the MIT License. See `LICENSE` for details.
+
+For third-party licenses, see `THIRD_PARTY_NOTICES.md`.
