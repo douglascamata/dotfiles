@@ -1,16 +1,12 @@
 # Third Party Notices
 
-This directory contains code originally from:
+## mitsuhiko/agent-stuff
 
 - **Source**: <https://github.com/mitsuhiko/agent-stuff>
 - **Author**: Armin Ronacher
-- **License**: Apache License 2.0
+- **License**: Apache License 2.0 (see [LICENSE-Apache-2.0](LICENSE-Apache-2.0))
 
-See [LICENSE-Apache-2.0](LICENSE-Apache-2.0) for the full license text.
-
-## Covered Files
-
-The following files are derived from the above source:
+### Covered Files
 
 - `commands/handoff.md`
 - `commands/improve-plan.md`
