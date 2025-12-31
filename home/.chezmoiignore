@@ -13,4 +13,4 @@ external_files/**/*
 .config/pipewire
 .config/wireplumber
 {{- end }}
-
+**/node_modules/
