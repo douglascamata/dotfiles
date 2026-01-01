@@ -11,6 +11,19 @@ Use the 1Password CLI (`op`) to securely retrieve secrets from the user's 1Passw
 
 **The Bash tool captures command output and includes it in conversation history.** Running `op read` alone exposes the secret. Always consume secrets inline.
 
+## Recommended Workflow
+
+**Ask for the secret reference first.** When a user needs a secret from 1Password:
+
+1. **Ask the user** to provide the secret reference directly (e.g., `op://Private/MyService/password`)
+2. **Only search** for items if the user explicitly asks you to find/search for a secret
+3. **Read the secret** using the provided reference with inline consumption
+
+This approach is faster, avoids unnecessary API calls, and ensures the user knows exactly which secret is being accessed.
+
+Example prompt to user:
+> "Please provide the 1Password secret reference (e.g., `op://VaultName/ItemName/field`), or ask me to search for it if you're unsure."
+
 ### Mandatory Patterns
 
 | Pattern | Example |
@@ -26,7 +39,7 @@ Use the 1Password CLI (`op`) to securely retrieve secrets from the user's 1Passw
 # ❌ WRONG - secret appears in Bash tool output
 op read "op://vault/item/password"
 
-# ❌ WRONG - echo displays the secret  
+# ❌ WRONG - echo displays the secret
 PASSWORD=$(op read "op://vault/item/password")
 echo "Password is: $PASSWORD"
 
@@ -61,7 +74,9 @@ op://vault/item/field
 
 ## Core Commands
 
-### Find Items
+### Find Items (only when user asks to search)
+
+Use these commands **only when the user explicitly asks** to find or search for a secret:
 
 ```bash
 # List vaults
