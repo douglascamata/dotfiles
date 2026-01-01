@@ -17,9 +17,7 @@
     "plugin-dev@claude-plugins-official": true,
     "code-review@claude-plugins-official": true,
     "pr-review-toolkit@claude-plugins-official": true,
-    "ralph-wiggum@claude-plugins-official": true,
-    "hookify@claude-plugins-official": true,
-    "dev-browser@dev-browser-marketplace": true
+    "ralph-wiggum@claude-plugins-official": true
   },
   "alwaysThinkingEnabled": true
 }
