@@ -7,6 +7,7 @@ Detailed examples for common 1Password CLI operations. See `SKILL.md` for core r
 When user asks to "get the Portainer password from 1Password":
 
 1. **Find the item** (show this to user):
+
    ```bash
    op item list --format=json | jq -r '.[] | select(.title | test("portainer"; "i")) | "\(.id) | \(.title) | \(.vault.name)"'
    ```
@@ -14,6 +15,7 @@ When user asks to "get the Portainer password from 1Password":
 2. **Confirm with user** which item they want
 
 3. **Read the secret programmatically** (do NOT show output):
+
    ```bash
    export PASSWORD=$(op read "op://Private/Portainer/password") && echo "Secret loaded"
    ```
