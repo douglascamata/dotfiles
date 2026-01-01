@@ -3,6 +3,9 @@ return {
   opts = {
     cli = {
       tools = {
+        droid = {
+          cmd = { "droid" },
+        },
         amp = {
           cmd = { "amp" },
           format = function(text)
