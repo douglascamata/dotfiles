@@ -23,6 +23,9 @@ return {
             return ret
           end,
         },
+        ["minimax (cc)"] = {
+          cmd = { "ccs", "minimax" },
+        },
       },
     },
   },
