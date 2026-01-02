@@ -204,7 +204,7 @@ fi
 # --------------
 # Set up zoxide (cd with fuzzy search)
 # --------------
-if command -v zoxide >/dev/null 2>&1; then
+if command -v zoxide >/dev/null 2>&1 && [[ "$CLAUDECODE" != "1" ]]; then
   eval "$(zoxide init zsh)"
   alias cd="z"
   alias j="z"
