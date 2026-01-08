@@ -2,6 +2,12 @@ return {
   "folke/sidekick.nvim",
   opts = {
     cli = {
+      win = {
+        keys = {
+          -- override the default hide keymap
+          prompt = { "<C-M-p>", "prompt", mode = "t" },
+        },
+      },
       tools = {
         droid = {
           cmd = { "droid" },
