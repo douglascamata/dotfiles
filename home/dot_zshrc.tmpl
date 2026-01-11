@@ -180,6 +180,12 @@ alias yz="yazi"
 alias claude="claude --allow-dangerously-skip-permissions"
 alias make="make -j`nproc`"
 alias c="clear"
+alias oc="opencode"
+
+omo() {
+  OPENCODE_CONFIG=~/.config/opencode/opencode-omo.json opencode "$@"
+}
+
 
 {{- if eq .chezmoi.os "linux" }}
 # Find packages without leaving the terminal
