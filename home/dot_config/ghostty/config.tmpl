@@ -1,6 +1,10 @@
 font-family = Berkeley Mono
 font-feature = +calt
 
+{{- if eq .chezmoi.os "linux" }}
+font-size = 10
+{{- end }}
+
 theme = Catppuccin Macchiato
 
 shell-integration = zsh
