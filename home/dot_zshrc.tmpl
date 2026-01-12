@@ -178,9 +178,14 @@ alias ld="lazydocker"
 alias cm="chezmoi"
 alias yz="yazi"
 alias claude="claude --allow-dangerously-skip-permissions"
-alias make="make -j`nproc`"
 alias c="clear"
 alias oc="opencode"
+
+{{- if eq .chezmoi.os "linux" }}
+alias make="make -j`nproc`"
+{{- else }}
+alias make="make -j`sysctl -n hw.physicalcpu`"
+{{- end }}
 
 omo() {
   OPENCODE_CONFIG=~/.config/opencode/opencode-omo.json opencode "$@"
