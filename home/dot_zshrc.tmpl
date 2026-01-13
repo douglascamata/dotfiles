@@ -107,6 +107,15 @@ source $ZSH/oh-my-zsh.sh
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 
+# ------------
+# Setup autocomplete with cache and interactive fuzzy search
+# ------------
+# Note: oh-my-zsh already calls compinit, so we override its menu style here
+# Using the same specific pattern as oh-my-zsh to ensure our setting takes precedence
+zstyle ':completion:*:*:*:*:*' menu select interactive
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
