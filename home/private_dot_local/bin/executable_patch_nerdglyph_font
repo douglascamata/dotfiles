@@ -6,9 +6,7 @@ set -euo pipefail
 # Configuration variables
 NERD_FONT_PATCHER_OPTS=(
 	"--complete"
-	"--single-width-glyphs"
-	"--adjust-line-height"
-	"-c"
+	"--mono"
 )
 
 DOCKER_IMAGE="nerdfonts/patcher"
