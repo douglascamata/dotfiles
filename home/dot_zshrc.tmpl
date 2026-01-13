@@ -101,6 +101,12 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
+# ------------
+# Setup config home folder
+# ------------
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -128,13 +134,6 @@ export PATH=$PATH:${HOME}/.local/share/omarchy/bin
 {{- if eq .chezmoi.os "linux" }}
 export OMARCHY_PATH="/home/$USER/.local/share/omarchy"
 {{- end}}
-
-
-# ------------
-# Setup config home folder
-# ------------
-export XDG_CONFIG_HOME="$HOME/.config"
-
 
 # ------------
 # Elixir
