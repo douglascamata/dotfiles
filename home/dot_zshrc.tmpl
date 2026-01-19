@@ -133,15 +133,7 @@ export PATH=$PATH:${HOME}/.cargo/bin
 export PATH="${HOME}/.antigravity/antigravity/bin:$PATH"
 export PATH="${HOME}/.bun/bin:$PATH"
 {{- if eq .chezmoi.os "linux" }}
-export PATH=$PATH:${HOME}/.local/share/omarchy/bin
-{{- end}}
-
-
-# -------
-# Omarchy
-# -------
-{{- if eq .chezmoi.os "linux" }}
-export OMARCHY_PATH="/home/$USER/.local/share/omarchy"
+export PATH="${HOME}/.amp/bin:$PATH"
 {{- end}}
 
 # ------------
@@ -273,6 +265,14 @@ export CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR=true
 export CLAUDE_CODE_ENABLE_UNIFIED_READ_TOOL=true
 export ENABLE_TOOL_SEARCH=true
 export ENABLE_EXPERIMENTAL_MCP_CLI=false
+
+# --------------
+# OpenCode config
+# --------------
+OPENCODE_EXPERIMENTAL_LSP_TOOL=true
+OPENCODE_EXPERIMENTAL_PLAN_MODE=true
+OPENCODE_EXPERIMENTAL_PLAN_MODE=true
+OPENCODE_EXPERIMENTAL_OXFMT=true
 
 # --------------
 # Helper functions
