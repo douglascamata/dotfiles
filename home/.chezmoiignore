@@ -4,11 +4,6 @@ external_files/
 external_files/**/*
 
 {{- if ne .chezmoi.hostname "roci" }}
-# hyprland stuff
-.config/hypr
-.config/waybar
-.local/bin/scratchpad
-
 # audio stack set up
 .config/pipewire
 .config/wireplumber
