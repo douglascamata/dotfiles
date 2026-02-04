@@ -5,10 +5,13 @@
     "websearch"
   ],
   "agents": {
-    "Sisyphus": {
+    "sisyphus": {
       "model": "opencode/claude-opus-4-5"
     },
-    "Planner-Sisyphus": {
+    "hephaestus": {
+      "model": "opencode/gpt-5.2"
+    },
+    "prometheus": {
       "model": "opencode/gpt-5.2"
     },
     "librarian": {
