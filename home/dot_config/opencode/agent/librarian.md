@@ -1,7 +1,7 @@
 ---
 mode: subagent
 description: "Search remote codebases on GitHub for code, documentation, and examples"
-model: opencode/claude-sonnet-4-5
+model: opencode/claude-sonnet-4-6
 color: "#F59E0B"
 tools:
   read: true
