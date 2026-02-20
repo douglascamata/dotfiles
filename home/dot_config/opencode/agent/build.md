@@ -4,7 +4,7 @@ description: "Amp-style coding agent: concise, direct, takes initiative"
 model: opencode/claude-opus-4-6
 variant: max
 color: "#6366F1"
-permissions:
+permission:
   task:
     "*": allow
 ---
