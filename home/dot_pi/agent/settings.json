@@ -1,0 +1,23 @@
+{
+  "lastChangelogVersion": "0.52.12",
+  "defaultProvider": "opencode",
+  "defaultModel": "gemini-3-flash",
+  "defaultThinkingLevel": "high",
+  "enabledModels": [
+    "opencode/claude-opus-4-6",
+    "opencode/gpt-5.2-codex"
+  ],
+  "packages": [
+    "npm:pi-powerline-footer",
+    "npm:pi-extmgr",
+    "npm:pi-mcp-adapter",
+    "npm:@aliou/pi-processes",
+    "npm:pi-librarian",
+    "npm:pi-finder-subagent",
+    "npm:pi-context"
+  ],
+  "skills": [
+    "~/.claude/skills"
+  ],
+  "theme": "dark"
+}
