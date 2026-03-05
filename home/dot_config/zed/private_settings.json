@@ -15,20 +15,7 @@
         "api_url": "https://opencode.ai/zen/v1",
         "available_models": [
           {
-            "name": "gpt-5.2",
-            "max_tokens": 200000,
-            "max_output_tokens": 32000,
-            "max_completion_tokens": 200000,
-            "capabilities": {
-              "tools": true,
-              "images": false,
-              "parallel_tool_calls": true,
-              "prompt_cache_key": true,
-              "chat_completions": true
-            }
-          },
-          {
-            "name": "gpt-5.2-codex",
+            "name": "gpt-5.3-codex",
             "max_tokens": 200000,
             "max_output_tokens": 32000,
             "max_completion_tokens": 200000,
@@ -117,6 +104,9 @@
   },
   "show_whitespaces": "all",
   "edit_predictions": {
+    "copilot": {
+      "enable_next_edit_suggestions": true
+    },
     "provider": "copilot",
     "mode": "eager",
     "disabled_globs": []
@@ -128,11 +118,7 @@
     "favorite_models": [
       {
         "provider": "openai",
-        "model": "gpt-5.2"
-      },
-      {
-        "provider": "openai",
-        "model": "gpt-5.2-codex"
+        "model": "gpt-5.3-codex"
       }
     ],
     "play_sound_when_agent_done": true,
@@ -149,6 +135,15 @@
     }
   },
   "agent_servers": {
+    "opencode": {
+      "type": "registry"
+    },
+    "pi-acp": {
+      "type": "registry"
+    },
+    "amp-acp": {
+      "type": "registry"
+    },
     "codex": {
       "default_mode": "auto",
       "command": "npx",
