@@ -1,0 +1,37 @@
+model = "gpt-5.4"
+review_model = "gpt-5.4"
+
+model_reasoning_summary = "auto"
+model_reasoning_effort = "high"
+
+# Disable approval prompts (equivalent to --yolo)
+approval_policy = "never"
+
+# Grant full system access (equivalent to --yolo)
+sandbox_mode = "danger-full-access"
+personality = "pragmatic"
+web_search = "live"
+
+[tui]
+show_raw_agent_reasoning = true
+status_line = ["current-dir", "git-branch", "model-with-reasoning", "context-remaining", "context-window-size", "total-input-tokens", "total-output-tokens", "used-tokens", "five-hour-limit", "weekly-limit"]
+
+[features]
+streamable_shell = true
+unified_exec = true
+shell_snapshot = true
+skills = true
+multi_agent = true
+prevent_idle_sleep = true
+apps = true
+undo = true
+
+# Per-project trust is intentionally not managed in chezmoi.
+# Codex may append local [projects."<path>"] entries on this machine.
+
+[mcp_servers.context7]
+args = ["-y", "@upstash/context7-mcp"]
+command = "npx"
+
+[sandbox_workspace_write]
+network_access = true
