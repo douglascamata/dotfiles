@@ -115,7 +115,10 @@ export PATH="${HOME}/.antigravity/antigravity/bin:$PATH"
 export PATH="${HOME}/.bun/bin:$PATH"
 {{- if eq .chezmoi.os "linux" }}
 export PATH="${HOME}/.amp/bin:$PATH"
-{{- end}}
+{{- end }}
+{{- if eq .chezmoi.os "darwin" }}
+export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"
+{{- end }}
 
 # ------------
 # Elixir
