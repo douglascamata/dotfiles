@@ -1,23 +1,26 @@
 {
-  "lastChangelogVersion": "0.52.12",
-  "defaultProvider": "opencode",
-  "defaultModel": "gemini-3-flash",
+  "lastChangelogVersion": "0.65.2",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.4",
   "defaultThinkingLevel": "high",
-  "enabledModels": [
-    "opencode/claude-opus-4-6",
-    "opencode/gpt-5.2-codex"
-  ],
   "packages": [
     "npm:pi-powerline-footer",
     "npm:pi-extmgr",
     "npm:pi-mcp-adapter",
     "npm:@aliou/pi-processes",
     "npm:pi-librarian",
-    "npm:pi-finder-subagent",
     "npm:pi-context"
   ],
   "skills": [
-    "~/.claude/skills"
+    "~/.agents/skills",
+    ".agents/skills"
   ],
-  "theme": "dark"
+  "theme": "dark",
+  "transport": "auto",
+  "doubleEscapeAction": "tree",
+  "enabledModels": [
+    "openai-codex/gpt-5.4",
+    "openai-codex/gpt-5.3-codex-spark"
+  ],
+  "hideThinkingBlock": false
 }
