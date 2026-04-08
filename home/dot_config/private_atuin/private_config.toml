@@ -13,6 +13,14 @@ enter_accept = true
 inline_height = 0
 style = "full"
 
+# Set up daemon-based search for better performance.
+search_mode = "daemon-fuzzy"
+
+# Set up Atuin to start and manage a daemon for speedy seraches.
+[daemon]
+enabled = true
+autostart = true
+
 [stats]
 ## Set commands where we should consider the subcommand for statistics. Eg, kubectl get vs just kubectl
 common_subcommands = [
