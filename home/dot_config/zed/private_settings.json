@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "hover_popover_enabled": true,
   "show_signature_help_after_edits": true,
   "auto_signature_help": true,
   "language_models": {
@@ -135,37 +136,11 @@
     }
   },
   "agent_servers": {
-    "opencode": {
-      "type": "registry"
-    },
     "pi-acp": {
       "type": "registry"
     },
-    "amp-acp": {
+    "codex-acp": {
       "type": "registry"
-    },
-    "codex": {
-      "default_mode": "auto",
-      "command": "npx",
-      "args": [
-        "@zed-industries/codex-acp"
-      ]
-    },
-    "opencode (custom)": {
-      "type": "custom",
-      "command": "opencode",
-      "args": [
-        "acp"
-      ],
-      "env": {}
-    },
-    "goose 🪿": {
-      "type": "custom",
-      "command": "goose",
-      "args": [
-        "acp"
-      ],
-      "env": {}
     }
   },
   "telemetry": {
@@ -177,6 +152,7 @@
   "buffer_font_size": 12.0,
   "theme": "Catppuccin Macchiato",
   "git_panel": {
+    "status_style": "icon",
     "tree_view": true,
     "sort_by_path": true,
   },
