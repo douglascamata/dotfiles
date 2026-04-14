@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.65.2",
+  "lastChangelogVersion": "0.66.1",
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-5.4",
   "defaultThinkingLevel": "high",
@@ -9,11 +9,12 @@
     "npm:pi-mcp-adapter",
     "npm:@aliou/pi-processes",
     "npm:pi-librarian",
-    "npm:pi-context"
+    "npm:pi-context",
+    "npm:@benvargas/pi-openai-fast"
   ],
   "skills": [
     "~/.agents/skills",
-    ".agents/skills"
+    "./.agents/skills"
   ],
   "theme": "dark",
   "transport": "auto",
