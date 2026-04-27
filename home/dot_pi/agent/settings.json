@@ -1,7 +1,7 @@
 {
-  "lastChangelogVersion": "0.67.2",
+  "lastChangelogVersion": "0.70.2",
   "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-5.4",
+  "defaultModel": "gpt-5.5",
   "defaultThinkingLevel": "high",
   "packages": [
     "npm:pi-powerline-footer",
@@ -21,6 +21,7 @@
   "transport": "auto",
   "doubleEscapeAction": "tree",
   "enabledModels": [
+    "openai-codex/gpt-5.5",
     "openai-codex/gpt-5.4",
     "openai-codex/gpt-5.3-codex-spark"
   ],
