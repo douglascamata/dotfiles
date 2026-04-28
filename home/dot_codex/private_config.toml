@@ -1,18 +1,18 @@
-model = "gpt-5.4"
-review_model = "gpt-5.4"
+model = "gpt-5.5"
+review_model = "gpt-5.5"
+service_tier = "fast"
 
 model_reasoning_summary = "auto"
 model_reasoning_effort = "high"
+plan_mode_reasoning_effort = "xhigh"
 
 # Disable approval prompts (equivalent to --yolo)
 approval_policy = "never"
-
 # Grant full system access (equivalent to --yolo)
 sandbox_mode = "danger-full-access"
+
 personality = "pragmatic"
 web_search = "live"
-plan_mode_reasoning_effort = "high"
-service_tier = "fast"
 
 # Use a tool to search for MCPs, saving context
 search_tool = true
@@ -32,6 +32,9 @@ status_line = [
   "weekly-limit",
 ]
 
+[tui.model_availability_nux]
+"gpt-5.5" = 3
+
 [features]
 streamable_shell = true
 unified_exec = true
@@ -43,11 +46,8 @@ apps = true
 undo = true
 
 [mcp_servers.context7]
-args = ["-y", "@upstash/context7-mcp"]
 command = "npx"
+args = ["-y", "@upstash/context7-mcp"]
 
 [sandbox_workspace_write]
 network_access = true
-
-# Per-project trust is intentionally not managed in chezmoi.
-# Codex may append local [projects."<path>"] entries on this machine.
