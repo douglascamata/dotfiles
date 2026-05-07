@@ -87,6 +87,14 @@ source $ZSH/oh-my-zsh.sh
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 
+
+{{- if eq .chezmoi.os "darwin" }}
+# ------------
+# Fix DOCKER_HOST for colima on macOS
+# ------------
+export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock"
+{{- end }}
+
 # ------------
 # Setup autocomplete with cache and interactive fuzzy search
 # ------------
