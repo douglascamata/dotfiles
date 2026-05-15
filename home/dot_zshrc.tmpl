@@ -93,6 +93,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # Fix DOCKER_HOST for colima on macOS
 # ------------
 export DOCKER_HOST="unix://${HOME}/.config/colima/default/docker.sock"
+export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE="unix://${HOME}/.config/colima/default/docker.sock"
 {{- end }}
 
 # ------------
