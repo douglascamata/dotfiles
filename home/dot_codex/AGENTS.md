@@ -26,3 +26,9 @@ NEVER commit or push anything if I didn't explicitly ask you to do so.
   - Only fallback to `rg` or `grep` for plain-text searches when explicitly requested
 - **When to use ast-grep**: Function/class definitions, method calls, structs, import statements, or any code structure matching
 - When working in an environment with `ast-grep`, use `ast-grep --lang ruby -p '<pattern>'` (or set `--lang` appropriately) for syntax-aware or structural matching, avoiding text-only tools like `rg` or `grep` unless explicitly requested for plain-text search
+
+## Temporary directory for experiments
+
+When you need to experiment with anything that needs a temporary repository,
+use `~/code/tmp` as the base directory. Create a subdirectory named like so:
+`<CHAT_NAME>-<LAST_6_DIGITS_OF_SESSION_ID>` and put anything temporary there.
