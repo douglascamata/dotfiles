@@ -18,6 +18,10 @@ need to use `git diff` or any other commands that could be affected.
 
 NEVER commit or push anything if I didn't explicitly ask you to do so.
 
+## Interacting with Github
+
+Prefer the `gh` CLI to interact with Github.
+
 ## Code Search Tools
 
 - **Primary tool for structural/syntax-aware searches**: Use `ast-grep` (`sg`) command
