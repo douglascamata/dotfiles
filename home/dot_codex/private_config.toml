@@ -1,5 +1,5 @@
-model = "gpt-5.5"
-review_model = "gpt-5.5"
+model = "gpt-5.6-sol"
+review_model = "gpt-5.6-sol"
 service_tier = "fast"
 
 model_reasoning_summary = "auto"
@@ -17,13 +17,23 @@ web_search = "live"
 # Use a tool to search for MCPs, saving context
 search_tool = true
 
+[sandbox_workspace_write]
+network_access = true
+
+notify = [
+  "/Users/douglas/.codex-enterprise/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient",
+  "turn-ended",
+]
+
 [tui]
 show_raw_agent_reasoning = true
 status_line = [
+  "run-state",
   "current-dir",
   "git-branch",
+  "pull-request-number",
   "model-with-reasoning",
-  "context-remaining",
+  "context-used",
   "context-window-size",
   "total-input-tokens",
   "total-output-tokens",
@@ -31,9 +41,16 @@ status_line = [
   "five-hour-limit",
   "weekly-limit",
 ]
+session_picker_view = "dense"
+status_line_use_colors = true
 
 [tui.model_availability_nux]
-"gpt-5.5" = 3
+"gpt-5.5" = 4
+"gpt-5.6-sol" = 4
+
+[memories]
+generate_memories = false
+use_memories = false
 
 [features]
 streamable_shell = true
@@ -44,10 +61,68 @@ multi_agent = true
 prevent_idle_sleep = true
 apps = true
 undo = true
+terminal_resize_reflow = true
+js_repl = false
+chronicle = false
+
+[desktop]
+appearanceLightCodeThemeId = "codex"
+usePointerCursors = true
+followUpQueueMode = "steer"
+reviewDelivery = "detached"
+preventSleepWhileRunning = true
+keepRemoteControlAwakeWhilePluggedIn = false
+git-show-sidebar-pr-icons = true
+git-commit-instructions = ""
+worktree-keep-count = 5
+mac-menu-bar-enabled = false
+git-create-pull-request-as-draft = true
+git-pull-request-merge-method = "squash"
+git-pr-instructions = "Before writing the PR description/title, look for contribution guidelines (i.e. in a `CONTRIBUTING.md` file) and pull request template (i.e. in `./.github/pull_request_template.md`)."
+notifications-turn-mode = "unfocused"
+notifications-permissions-enabled = true
+show-context-window-usage = true
+conversationDetailMode = "STEPS_COMMANDS"
+ambient-suggestions-enabled = false
+dictationDictionary = []
+selected-avatar-id = "null-signal"
+dock-icon-preference = "codex-system"
+avatar-overlay-mascot-width-px = 131
+
+[desktop.appearanceLightChromeTheme.fonts]
+code = "Berkeley Mono Variable"
+
+[desktop.appearanceDarkChromeTheme.fonts]
+code = "Berkeley Mono Variable"
+
+[desktop.open-in-target-preferences]
+global = "zed"
+
+[desktop.appearanceLightChromeTheme]
+accent = "#0169cc"
+contrast = 45
+ink = "#0d0d0d"
+opaqueWindows = true
+surface = "#ffffff"
+
+[desktop.appearanceLightChromeTheme.semanticColors]
+diffAdded = "#00a240"
+diffRemoved = "#e02e2a"
+skill = "#751ed9"
+
+[desktop.appearanceDarkChromeTheme]
+accent = "#339cff"
+contrast = 60
+ink = "#ffffff"
+opaqueWindows = true
+surface = "#181818"
+
+[desktop.appearanceDarkChromeTheme.semanticColors]
+diffAdded = "#40c977"
+diffRemoved = "#fa423e"
+skill = "#ad7bf9"
 
 [mcp_servers.context7]
 command = "npx"
 args = ["-y", "@upstash/context7-mcp"]
 
-[sandbox_workspace_write]
-network_access = true
