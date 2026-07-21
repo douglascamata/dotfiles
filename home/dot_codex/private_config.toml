@@ -20,11 +20,6 @@ search_tool = true
 [sandbox_workspace_write]
 network_access = true
 
-notify = [
-  "/Users/douglas/.codex-enterprise/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient",
-  "turn-ended",
-]
-
 [tui]
 show_raw_agent_reasoning = true
 status_line = [
@@ -128,4 +123,3 @@ skill = "#ad7bf9"
 [mcp_servers.context7]
 command = "npx"
 args = ["-y", "@upstash/context7-mcp"]
-
