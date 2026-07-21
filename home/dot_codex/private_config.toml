@@ -79,7 +79,7 @@ mac-menu-bar-enabled = false
 git-create-pull-request-as-draft = true
 git-pull-request-merge-method = "squash"
 git-pr-instructions = "Before writing the PR description/title, look for contribution guidelines (i.e. in a `CONTRIBUTING.md` file) and pull request template (i.e. in `./.github/pull_request_template.md`)."
-notifications-turn-mode = "unfocused"
+notifications-turn-mode = "always"
 notifications-permissions-enabled = true
 show-context-window-usage = true
 conversationDetailMode = "STEPS_COMMANDS"
@@ -88,6 +88,9 @@ dictationDictionary = []
 selected-avatar-id = "null-signal"
 dock-icon-preference = "codex-system"
 avatar-overlay-mascot-width-px = 131
+enabled-reasoning-efforts = ["low", "medium", "high", "xhigh", "ultra", "max"]
+show-ultra-in-model-picker-slider = true
+notifications-questions-enabled = true
 
 [desktop.appearanceLightChromeTheme.fonts]
 code = "Berkeley Mono Variable"
