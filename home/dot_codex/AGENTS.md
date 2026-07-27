@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Always talk using simple and clear language. 
+Always talk using simple and clear language.
 
 You should rely on the controlled natural language ASD-STE100 (Simplified Technical English) when talking about technical subjects to ensure it's well understood and of easy comprehensions by readers.
 
@@ -32,22 +32,25 @@ need to use `git diff` or any other commands that could be affected.
 
 - NEVER commit or push anything if I didn't explicitly ask you to do so.
 
+- Commit to the branch I am on, always. Never create a branch first, not even
+  when that branch is `main` or another default branch. Branch only if I ask
+  for it.
+
 ## Interacting with Github
 
 - Prefer the `gh` CLI to interact with Github.
 
 ## Code Search Tools
 
-- **Primary tool for structural/syntax-aware searches**: Use `ast-grep` (`sg`) command
-  - For Rust code: `sg -lang rust -p '‹pattern>'`
+- **Primary tool for structural/syntax-aware searches**: Use the `ast-grep` command
+  - **When to use ast-grep**: Function/class definitions, method calls, structs, import statements, or any code structure matching
+  - For Rust code: `ast-grep -lang rust -p '‹pattern>'`
   - For other languages: Set `--lang` appropriately (e.g., `--lang javascript`, `--lang python`)
   - Only fallback to `rg` or `grep` for plain-text searches when explicitly requested
-  - For seeing the outline of a file or folder, use `sg outline <path>`. It can
+  - For seeing the outline of a file or folder, use `ast-grep outline <path>`. It can
     be combined with `-p` for pattern searching. The outline can be also
     enriched with `--view` for `names`, `signatures`, or be `expanded` (the
     default is `auto`.
-- **When to use ast-grep**: Function/class definitions, method calls, structs, import statements, or any code structure matching
-- When working in an environment with `ast-grep`, use `ast-grep --lang ruby -p '<pattern>'` (or set `--lang` appropriately) for syntax-aware or structural matching, avoiding text-only tools like `rg` or `grep` unless explicitly requested for plain-text search
 
 ## Temporary directory for experiments
 
