@@ -2,7 +2,11 @@
 
 Always talk using simple and clear language.
 
-You should rely on the controlled natural language ASD-STE100 (Simplified Technical English) when talking about technical subjects to ensure it's well understood and of easy comprehensions by readers.
+## Language
+
+You should rely on the controlled natural language ASD-STE100 (Simplified
+Technical English) as much as possible to ensure all text you write is well
+understood and easy to comprehend.
 
 ## When doing code changes
 
