@@ -1,14 +1,13 @@
-model = "gpt-5.6-sol"
-review_model = "gpt-5.6-sol"
-service_tier = "fast"
+model = "gpt-6.1-sol"
+review_model = "gpt-6.1-sol"
+service_tier = "default"
 
 model_reasoning_summary = "auto"
 model_reasoning_effort = "high"
 plan_mode_reasoning_effort = "xhigh"
 
-# Disable approval prompts (equivalent to --yolo)
-approval_policy = "never"
-# Grant full system access (equivalent to --yolo)
+approval_policy = "on-request"
+approvals_reviewer = "auto_review"
 sandbox_mode = "danger-full-access"
 
 personality = "pragmatic"
@@ -35,6 +34,8 @@ status_line = [
   "used-tokens",
   "five-hour-limit",
   "weekly-limit",
+  "thread-credits",
+  "estimated-thread-cost",
 ]
 session_picker_view = "dense"
 status_line_use_colors = true
@@ -42,23 +43,24 @@ status_line_use_colors = true
 [tui.model_availability_nux]
 "gpt-5.5" = 4
 "gpt-5.6-sol" = 4
+gpt-6-astra = 4
+"gpt-6.1-sol" = 4
 
 [memories]
 generate_memories = false
 use_memories = false
 
 [features]
-streamable_shell = true
 unified_exec = true
 shell_snapshot = true
-skills = true
 multi_agent = true
 prevent_idle_sleep = true
 apps = true
 undo = true
 terminal_resize_reflow = true
-js_repl = false
 chronicle = false
+local_thread_store_compression = true
+memories = false
 
 [desktop]
 appearanceLightCodeThemeId = "codex"
